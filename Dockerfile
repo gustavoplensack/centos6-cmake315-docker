@@ -6,6 +6,7 @@ RUN cd /usr/local/src \
     && mkdir -p software \
     && cd software \
     && yum -y install centos-release-scl \ 
+    && yum -y install git \
     && yum -y install devtoolset-7 \
     && source /opt/rh/devtoolset-7/enable \
     && yum install wget -y \
