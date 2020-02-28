@@ -1,4 +1,4 @@
-FROM centos:centos6.10
+FROM i386/centos:centos6
 
 # # Installing CMake inside the container image
 RUN cd /usr/local/src \ 
