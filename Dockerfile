@@ -24,4 +24,5 @@ RUN cd /usr/local/src/ \
     && N_JOBS=$(nproc) \
     && apt install -y zip \
     && wget https://dl.google.com/android/repository/android-ndk-r16b-linux-x86_64.zip \
-    && unzip android-ndk-r16b-linux-x86_64.zip
+    && unzip android-ndk-r16b-linux-x86_64.zip \
+    && rm android-ndk-r16b-linux-x86_64.zip
