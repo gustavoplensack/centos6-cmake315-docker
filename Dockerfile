@@ -22,5 +22,5 @@ RUN cd /usr/local/src \
     && cmake --version
 
 
-RUN apt install -y git
+RUN apt install -y git curl
 
