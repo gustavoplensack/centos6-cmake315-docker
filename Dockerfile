@@ -29,4 +29,4 @@ RUN cd /usr/local/src/ \
     && rm android-ndk-r21-linux-x86_64.zip
 
 
-RUN apt install -y git
+RUN apt install -y git curl
