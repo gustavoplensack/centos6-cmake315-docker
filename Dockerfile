@@ -1,6 +1,9 @@
 FROM ubuntu:18.04
 
 # # Installing CMake inside the container image
+
+RUN apt install -y git
+
 RUN cd /usr/local/src \ 
     && N_JOBS=$(nproc) \
     && mkdir -p software \
