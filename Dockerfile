@@ -1,7 +1,6 @@
 FROM ubuntu:18.04
 
-# # Installing CMake inside the container image
-
+# Install CMake
 RUN cd /usr/local/src \ 
     && N_JOBS=$(nproc) \
     && mkdir -p software \
@@ -20,7 +19,7 @@ RUN cd /usr/local/src \
     && cmake --version
 
 
-
+# Install android NDK
 RUN cd /usr/local/src/ \
     && N_JOBS=$(nproc) \
     && apt install -y zip \
@@ -28,5 +27,10 @@ RUN cd /usr/local/src/ \
     && unzip android-ndk-r21-linux-x86_64.zip \
     && rm android-ndk-r21-linux-x86_64.zip
 
+# Install git, curl and python3.6
+RUN apt install -y git curl python3.6-dev python3-distutils python3-apt
 
-RUN apt install -y git curl
+# Install pip and AWS-CLI
+RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py \
+    && python3.6 get-pip.py \
+    && pip install awscli
