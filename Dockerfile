@@ -18,3 +18,9 @@ RUN cd /usr/local/src \
     && make install \
     && cd .. \
     && rm -rf cmake*
+
+# Install pip and AWS-CLI
+RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py \
+    && python2.7 get-pip.py \
+    && rm get-pip.py \
+    && pip install awscli
