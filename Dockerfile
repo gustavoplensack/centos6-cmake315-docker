@@ -1,9 +1,6 @@
 FROM i386/debian:jessie
 
-# # Installing CMake inside the container image
-
-
-
+# Install CMake
 RUN cd /usr/local/src \ 
     && N_JOBS=$(nproc) \
     && mkdir -p software \
@@ -21,6 +18,10 @@ RUN cd /usr/local/src \
     && rm -rf cmake* \
     && cmake --version
 
+# Install git, curl and python2.7
+RUN apt install -y git curl python2.7-dev
 
-RUN apt install -y git curl
-
+# Install pip and AWS-CLI
+RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py \
+    && python2.7 get-pip.py \
+    && pip install awscli
