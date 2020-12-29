@@ -1,6 +1,6 @@
 FROM centos:centos7
 
-# # Installing CMake inside the container image
+# Install CMake and useful software, like git
 RUN cd /usr/local/src \ 
     && N_JOBS=$(nproc) \
     && mkdir -p software \
